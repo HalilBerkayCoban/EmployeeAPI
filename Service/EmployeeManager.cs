@@ -68,5 +68,10 @@ namespace Demo.Service
             await _databaseContext.SaveChangesAsync();
             return employee;
         }
+
+        public Task<Employee> GetById(Guid id)
+        {
+            return _databaseContext.Employees.FirstOrDefaultAsync(x => x.Id == id);
+        }
     }
 }

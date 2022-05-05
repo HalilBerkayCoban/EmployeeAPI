@@ -14,6 +14,8 @@ namespace Demo.GraphQL
         }
 
         public IQueryable<Employee> Employees => _employeeService.GetAll();
+
+        public Task<Employee> Employee(Guid id) => _employeeService.GetById(id);
         
     }
 }
