@@ -29,7 +29,7 @@ namespace Demo.Service
                 StartDate = inputEmployee.StartDate,
                 Status = true,
             };
-            await _databaseContext.Employees.AddAsync(data);
+            _databaseContext.Employees.Add(data);
             await _databaseContext.SaveChangesAsync();
             return data;
         }
